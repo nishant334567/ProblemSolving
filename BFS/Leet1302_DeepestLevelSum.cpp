@@ -32,3 +32,30 @@ public:
         return sum;
     }
 };
+
+
+/* Recursive Approach */
+
+class Solution {
+public:
+    int sum=0,max_l=INT_MIN;
+    void level_(TreeNode* root, int level)
+    {
+        if(!root)
+            return;
+        if(max_l<level){
+            sum=root->val;
+            max_l=level;
+        }
+        else if(max_l==level){
+            sum+=root->val;
+            // return;
+        }
+        level_(root->left,level+1);
+        level_(root->right,level+1);
+    }
+
+    int deepestLeavesSum(TreeNode* root) {
+    level_(root,0);
+        return sum;
+    }
