@@ -1,4 +1,5 @@
 /* Vertical Traversal of a binary Tree */
+
 class Solution {
 public:
     map<pair<int,int>,vector<int>>m;
