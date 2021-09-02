@@ -7,6 +7,7 @@ class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
         int n = letters.size();
+        int t =target;
         if(t>=letters[n-1])
             return letters[0];
         char res;
